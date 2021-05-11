@@ -26,9 +26,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/persons")
 public class PersonController {
-    private List<String> persons = new ArrayList<>();
+    private List<String> persons;
     public PersonController() {
         persons = Person.getPersons();
+        System.out.println("Server up");
     }
     @GetMapping
     public List<String> getPersons() {
